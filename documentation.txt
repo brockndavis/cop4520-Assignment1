@@ -1,0 +1,19 @@
+Summary:
+My approach was to build a dynamic program for finding the primes between any two given numbers.
+The program is implemented to split the provided range into sub-ranges that are then processed
+concurrently, on seperated threads of execution.
+
+Efficiency and correctness:
+The program classifies each number n in the provided
+range as composite or prime by checking first for even divisibility of n by 2, then by each odd number in the
+range [3, sqrt(n)], since a composite number must have a factor less than or equal to the square root of itself.
+If n isn't evenly divisible by 2 or any number in the range [3, sqrt(n)], it is by definition prime, otherwise it is
+shown to be composite and discarded from the resulting output. This implementation is relatively efficient in its
+process, as only odd numbers in the range [2, sqrt(n)] are checked to be factors.
+
+Experimental evaluation:
+Since the program is set up to accept range parameters, I was able to easily test the program on a multitude of
+ranges which I found prime number count specifications for online. I found the program to be 100% accurate on all
+ranges I tested.
+
+
